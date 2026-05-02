@@ -79,6 +79,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col">
         {/* Available badge */}
         <motion.div
+          suppressHydrationWarning
           {...fadeUp(0.1)}
           className="inline-flex items-center gap-2 w-fit mb-10
             border border-[#00ffc8]/20 bg-[#00ffc8]/5
@@ -92,23 +93,34 @@ export default function Hero() {
 
         {/* Title */}
         <h1 className="text-[clamp(2.8rem,6vw,5rem)] font-extrabold leading-[1.05] tracking-tight mb-6">
-          <motion.span {...fadeUp(0.3)} className="block text-white">
+          <motion.span
+            suppressHydrationWarning
+            {...fadeUp(0.3)}
+            className="block text-white"
+          >
             Hi, I'm
           </motion.span>
           <motion.span
+            suppressHydrationWarning
             {...fadeUp(0.5)}
             className="block text-transparent"
             style={{ WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
           >
             Your Name
           </motion.span>
-          <motion.span {...fadeUp(0.7)} className="block text-[#00ffc8]">
+
+          <motion.span
+            suppressHydrationWarning
+            {...fadeUp(0.7)}
+            className="block text-[#00ffc8]"
+          >
             Full-Stack Dev.
           </motion.span>
         </h1>
 
         {/* Typewriter */}
         <motion.div
+          suppressHydrationWarning
           {...fadeUp(0.9)}
           className="flex items-center gap-3 font-mono text-[0.95rem]
             text-white/35 mb-8"
@@ -121,6 +133,7 @@ export default function Hero() {
 
         {/* Description */}
         <motion.p
+          suppressHydrationWarning
           {...fadeUp(1.1)}
           className="max-w-[480px] text-[0.95rem] leading-[1.85]
             text-white/38 mb-10"
@@ -130,7 +143,11 @@ export default function Hero() {
         </motion.p>
 
         {/* CTA Buttons */}
-        <motion.div {...fadeUp(1.3)} className="flex gap-4 mb-14">
+        <motion.div
+          suppressHydrationWarning
+          {...fadeUp(1.3)}
+          className="flex gap-4 mb-14"
+        >
           <button
             onClick={() =>
               document
@@ -159,6 +176,7 @@ export default function Hero() {
 
         {/* Stats */}
         <motion.div
+          suppressHydrationWarning
           {...fadeUp(1.5)}
           className="flex gap-12 pt-8 border-t border-white/[0.05]"
         >
@@ -181,6 +199,7 @@ export default function Hero() {
 
       {/* ── RIGHT COLUMN ── */}
       <motion.div
+        suppressHydrationWarning
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.4 }}

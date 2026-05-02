@@ -36,6 +36,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-8 h-17 flex items-center justify-between">
         {/* Logo */}
         <motion.div
+          suppressHydrationWarning
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -46,6 +47,7 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <motion.ul
+          suppressHydrationWarning
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -72,6 +74,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <motion.button
+          suppressHydrationWarning
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -94,6 +97,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <motion.div
+          suppressHydrationWarning
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-[#080c10]/98 border-b border-[#00ffc8]/10
