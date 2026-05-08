@@ -5,30 +5,27 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiArrowRight, HiDownload } from "react-icons/hi";
 
-// If the above doesn't work, use this instead:
-// import { ArrowRight, Download, GithubIcon as Github, Linkedin } from 'lucide-react';
+// ─── EDIT YOUR INFO HERE ───────────────────────────────────────────────────
+const CONFIG = {
+  name: "Sourov Chandra Barmon",
+  role: "Full-Stack Dev.",
+  location: "Dhaka, BD",
+  experience: 3,
+  cvPath: "/cv.pdf",
+  github: "https://github.com/yourname",
+  githubLabel: "github.com/yourname",
+  linkedin: "https://linkedin.com/in/yourname",
+  linkedinLabel: "linkedin.com/in/yourname",
+  stack: ["Next.js", "TypeScript", "Node.js", "Tailwind"],
+  stats: [
+    { num: "3+", label: "Years Exp." },
+    { num: "20+", label: "Projects Done" },
+    { num: "15+", label: "Happy Clients" },
+  ],
+};
 
-const phrases = [
-  "Next.js Developer",
-  "UI/UX Enthusiast",
-  "Backend Engineer",
-  "Open Source Contributor",
-];
-
-const stats = [
-  { num: "3+", label: "Years Exp." },
-  { num: "20+", label: "Projects Done" },
-  { num: "15+", label: "Happy Clients" },
-];
-
-const socials = [
-  { icon: FaGithub, label: "github.com/yourname", href: "https://github.com" },
-  {
-    icon: FaLinkedin,
-    label: "linkedin.com/in/yourname",
-    href: "https://linkedin.com",
-  },
-];
+const TYPED_LINES = [CONFIG.name, "a Developer", "a Builder"];
+// ──────────────────────────────────────────────────────────────────────────
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -38,33 +35,56 @@ const fadeUp = (delay = 0) => ({
 
 export default function Hero() {
   const [displayed, setDisplayed] = useState("");
-  const [phraseIdx, setPhraseIdx] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-  const charRef = useRef(0);
+
+  // Use a single ref object to hold all mutable state — avoids stale closure issues
+  const stateRef = useRef({
+    lineIdx: 0,
+    charIdx: 0,
+    deleting: false,
+  });
 
   useEffect(() => {
-    const current = phrases[phraseIdx];
-    const speed = deleting ? 55 : 85;
+    let timer;
 
-    const timer = setTimeout(() => {
+    function tick() {
+      const { lineIdx, charIdx, deleting } = stateRef.current;
+      const currentLine = TYPED_LINES[lineIdx];
+
       if (!deleting) {
-        setDisplayed(current.slice(0, charRef.current + 1));
-        charRef.current++;
-        if (charRef.current === current.length) {
-          setTimeout(() => setDeleting(true), 1800);
+        // Typing forward
+        const next = currentLine.slice(0, charIdx + 1);
+        setDisplayed(next);
+        stateRef.current.charIdx = charIdx + 1;
+
+        if (charIdx + 1 === currentLine.length) {
+          // Finished typing — pause then start deleting
+          stateRef.current.deleting = true;
+          timer = setTimeout(tick, 1800);
+        } else {
+          timer = setTimeout(tick, 80);
         }
       } else {
-        setDisplayed(current.slice(0, charRef.current - 1));
-        charRef.current--;
-        if (charRef.current === 0) {
-          setDeleting(false);
-          setPhraseIdx((i) => (i + 1) % phrases.length);
+        // Deleting backward
+        const next = currentLine.slice(0, charIdx - 1);
+        setDisplayed(next);
+        stateRef.current.charIdx = charIdx - 1;
+
+        if (charIdx - 1 === 0) {
+          // Finished deleting — move to next line
+          const nextIdx = (lineIdx + 1) % TYPED_LINES.length;
+          stateRef.current.lineIdx = nextIdx;
+          stateRef.current.charIdx = 0;
+          stateRef.current.deleting = false;
+          timer = setTimeout(tick, 300); // small pause before typing next line
+        } else {
+          timer = setTimeout(tick, 45);
         }
       }
-    }, speed);
+    }
 
+    timer = setTimeout(tick, 600); // initial delay before first letter
     return () => clearTimeout(timer);
-  }, [displayed, deleting, phraseIdx]);
+  }, []); // ← runs ONCE, no dependency array issues
 
   return (
     <section
@@ -91,52 +111,62 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Title */}
-        <h1 className="text-[clamp(2.8rem,6vw,5rem)] font-extrabold leading-[1.05] tracking-tight mb-6">
+        {/* ── HERO HEADING ── */}
+        <h1 className="text-[clamp(2.8rem,6vw,5rem)] font-extrabold leading-[1.1] tracking-tight mb-6">
+          {/* "Hi, I'm" — static label */}
           <motion.span
             suppressHydrationWarning
             {...fadeUp(0.3)}
-            className="block text-white"
+            className="block text-white/50 text-[0.38em] font-mono font-normal tracking-[0.18em] uppercase mb-2"
           >
             Hi, I'm
           </motion.span>
+
+          {/* Typewriter line — cycles: name → "a Developer" → "a Builder" */}
           <motion.span
             suppressHydrationWarning
             {...fadeUp(0.5)}
-            className="block text-transparent"
-            style={{ WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
+            className="block text-[#00ffc8] min-h-[1.15em]"
           >
-            Your Name
+            {displayed}
+            <span
+              style={{
+                display: "inline-block",
+                width: "3px",
+                height: "0.85em",
+                background: "#00ffc8",
+                marginLeft: "3px",
+                verticalAlign: "middle",
+                animation: "cursorBlink 0.75s step-end infinite",
+              }}
+            />
           </motion.span>
 
+          {/* "I Build Things For the Web." — static */}
           <motion.span
             suppressHydrationWarning
             {...fadeUp(0.7)}
-            className="block text-[#00ffc8]"
+            className="block text-white mt-1"
           >
-            Full-Stack Dev.
+            I Build Things
+          </motion.span>
+          <motion.span
+            suppressHydrationWarning
+            {...fadeUp(0.8)}
+            className="block text-transparent"
+            style={{ WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
+          >
+            For the Web.
           </motion.span>
         </h1>
 
-        {/* Typewriter */}
-        <motion.div
-          suppressHydrationWarning
-          {...fadeUp(0.9)}
-          className="flex items-center gap-3 font-mono text-[0.95rem]
-            text-white/35 mb-8"
-        >
-          <span className="text-[#00ffc8]">&gt;_</span>
-          <span className="text-white/75 border-r-2 border-[#00ffc8] pr-0.5">
-            {displayed}
-          </span>
-        </motion.div>
+        <style>{`@keyframes cursorBlink { 50% { opacity: 0; } }`}</style>
 
         {/* Description */}
         <motion.p
           suppressHydrationWarning
-          {...fadeUp(1.1)}
-          className="max-w-[480px] text-[0.95rem] leading-[1.85]
-            text-white/38 mb-10"
+          {...fadeUp(1.0)}
+          className="max-w-[480px] text-[0.95rem] leading-[1.85] text-white/38 mb-10"
         >
           I craft high-performance web apps with obsessive attention to detail —
           pixel-perfect UIs, clean architecture, and scalable backend systems.
@@ -145,7 +175,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <motion.div
           suppressHydrationWarning
-          {...fadeUp(1.3)}
+          {...fadeUp(1.2)}
           className="flex gap-4 mb-14"
         >
           <button
@@ -163,7 +193,7 @@ export default function Hero() {
           </button>
 
           <a
-            href="/cv.pdf"
+            href={CONFIG.cvPath}
             download
             className="flex items-center gap-2 border border-white/10
               text-white/50 font-mono text-[0.72rem] tracking-wider
@@ -177,19 +207,16 @@ export default function Hero() {
         {/* Stats */}
         <motion.div
           suppressHydrationWarning
-          {...fadeUp(1.5)}
+          {...fadeUp(1.4)}
           className="flex gap-12 pt-8 border-t border-white/[0.05]"
         >
-          {stats.map((s) => (
+          {CONFIG.stats.map((s) => (
             <div key={s.label}>
               <div className="font-mono text-[1.7rem] font-bold text-white">
                 {s.num.replace("+", "")}
                 <span className="text-[#00ffc8]">+</span>
               </div>
-              <div
-                className="font-mono text-[0.6rem] tracking-[0.2em]
-                uppercase text-white/25 mt-1"
-              >
+              <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase text-white/25 mt-1">
                 {s.label}
               </div>
             </div>
@@ -197,7 +224,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* ── RIGHT COLUMN ── */}
+      {/* ── RIGHT COLUMN — Terminal card ── */}
       <motion.div
         suppressHydrationWarning
         initial={{ opacity: 0 }}
@@ -205,15 +232,8 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 1.4 }}
         className="relative z-10 hidden lg:block"
       >
-        {/* Terminal card */}
-        <div
-          className="bg-white/[0.02] border border-[#00ffc8]/12
-          rounded-lg overflow-hidden font-mono text-[0.68rem]"
-        >
-          <div
-            className="flex items-center gap-1.5 px-4 py-2.5
-            bg-[#00ffc8]/04 border-b border-[#00ffc8]/08"
-          >
+        <div className="bg-white/[0.02] border border-[#00ffc8]/12 rounded-lg overflow-hidden font-mono text-[0.68rem]">
+          <div className="flex items-center gap-1.5 px-4 py-2.5 bg-[#00ffc8]/04 border-b border-[#00ffc8]/08">
             <span className="w-2 h-2 rounded-full bg-[#ff5f57]" />
             <span className="w-2 h-2 rounded-full bg-[#febc2e]" />
             <span className="w-2 h-2 rounded-full bg-[#28c840]" />
@@ -226,39 +246,30 @@ export default function Hero() {
             <p>{"{"}</p>
             <p>
               &nbsp;&nbsp;<span className="text-sky-300">"name"</span>:{" "}
-              <span className="text-red-300">"Your Name"</span>,
+              <span className="text-red-300">"{CONFIG.name}"</span>,
             </p>
             <p>
               &nbsp;&nbsp;<span className="text-sky-300">"role"</span>:{" "}
-              <span className="text-red-300">"Full-Stack Dev"</span>,
+              <span className="text-red-300">"{CONFIG.role}"</span>,
             </p>
             <p>
               &nbsp;&nbsp;<span className="text-sky-300">"location"</span>:{" "}
-              <span className="text-red-300">"Dhaka, BD"</span>,
+              <span className="text-red-300">"{CONFIG.location}"</span>,
             </p>
             <p>
               &nbsp;&nbsp;<span className="text-sky-300">"experience"</span>:{" "}
-              <span className="text-yellow-200">3</span>,
+              <span className="text-yellow-200">{CONFIG.experience}</span>,
             </p>
             <p>
               &nbsp;&nbsp;<span className="text-sky-300">"stack"</span>: [
             </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <span className="text-red-300">"Next.js"</span>,
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <span className="text-red-300">"TypeScript"</span>,
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <span className="text-red-300">"Node.js"</span>,
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <span className="text-red-300">"Tailwind"</span>
-            </p>
+            {CONFIG.stack.map((tech, i) => (
+              <p key={tech}>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <span className="text-red-300">"{tech}"</span>
+                {i < CONFIG.stack.length - 1 ? "," : ""}
+              </p>
+            ))}
             <p>&nbsp;&nbsp;],</p>
             <p>
               &nbsp;&nbsp;<span className="text-sky-300">"available"</span>:{" "}
@@ -273,35 +284,37 @@ export default function Hero() {
 
         {/* Social links */}
         <div className="flex flex-col gap-3 mt-5">
-          {socials.map(({ icon: Icon, label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 font-mono text-[0.65rem]
-                tracking-wide text-white/30 px-3 py-2.5
-                border border-white/[0.05] rounded
-                hover:text-[#00ffc8] hover:border-[#00ffc8]/20
-                hover:bg-[#00ffc8]/04 transition-all duration-200"
-            >
-              <Icon size={14} />
-              {label}
-            </a>
-          ))}
+          <a
+            href={CONFIG.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 font-mono text-[0.65rem]
+              tracking-wide text-white/30 px-3 py-2.5
+              border border-white/[0.05] rounded
+              hover:text-[#00ffc8] hover:border-[#00ffc8]/20
+              hover:bg-[#00ffc8]/04 transition-all duration-200"
+          >
+            <FaGithub size={14} /> {CONFIG.githubLabel}
+          </a>
+          <a
+            href={CONFIG.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 font-mono text-[0.65rem]
+              tracking-wide text-white/30 px-3 py-2.5
+              border border-white/[0.05] rounded
+              hover:text-[#00ffc8] hover:border-[#00ffc8]/20
+              hover:bg-[#00ffc8]/04 transition-all duration-200"
+          >
+            <FaLinkedin size={14} /> {CONFIG.linkedinLabel}
+          </a>
         </div>
       </motion.div>
 
       {/* Scroll hint */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2
-        flex flex-col items-center gap-2 opacity-0 animate-[fadeIn_1s_2s_forwards]"
-      >
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-[fadeIn_1s_2s_forwards]">
         <div className="w-px h-9 bg-[#00ffc8]/50 animate-[scrollDown_1.6s_ease-in-out_infinite]" />
-        <span
-          className="font-mono text-[0.55rem] tracking-[0.2em]
-          uppercase text-white/20"
-        >
+        <span className="font-mono text-[0.55rem] tracking-[0.2em] uppercase text-white/20">
           scroll
         </span>
       </div>

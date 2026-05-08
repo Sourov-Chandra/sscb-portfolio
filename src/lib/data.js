@@ -48,3 +48,88 @@ export const projects = [
     image: "/projects/project4.png",
   },
 ];
+
+export const workExperience = [
+  {
+    id: 1,
+    role: "Senior Frontend Developer",
+    company: "TechCorp Ltd.",
+    type: "Full-time",
+    period: "Jan 2024 – Present",
+    location: "Remote",
+    current: true,
+    desc: "Leading frontend architecture for a SaaS platform serving 50k+ users.",
+    bullets: [
+      "Built reusable component library reducing dev time by 40%",
+      "Migrated codebase from CRA to Next.js 14, improving LCP by 60%",
+      "Mentored 3 junior developers",
+    ],
+    tags: ["Next.js", "TypeScript", "Tailwind", "GraphQL"],
+  },
+  {
+    id: 2,
+    role: "Full-Stack Developer",
+    company: "StartupXYZ",
+    type: "Full-time",
+    period: "Jun 2022 – Dec 2023",
+    location: "Dhaka, BD",
+    current: false,
+    desc: "Built and maintained multiple client-facing web applications end-to-end.",
+    bullets: [
+      "Developed REST APIs serving 200k+ monthly requests",
+      "Integrated Stripe for subscription billing",
+      "Reduced DB query time by 35% through indexing",
+    ],
+    tags: ["React", "Node.js", "PostgreSQL", "Docker"],
+  },
+  {
+    id: 3,
+    role: "Frontend Developer",
+    company: "Freelance",
+    type: "Contract",
+    period: "Jan 2022 – May 2022",
+    location: "Remote",
+    current: false,
+    desc: "Delivered pixel-perfect UIs for clients across 5 countries.",
+    bullets: [
+      "Built 8+ landing pages with 95+ Lighthouse scores",
+      "Created reusable React component libraries",
+    ],
+    tags: ["React", "Tailwind CSS", "Figma"],
+  },
+];
+
+export const education = [
+  {
+    id: 1,
+    icon: "🎓",
+    degree: "B.Sc. Computer Science",
+    school: "BUET",
+    year: "2018 – 2022",
+    desc: "Major in Software Engineering. CGPA 3.7/4.0",
+  },
+  {
+    id: 2,
+    icon: "📜",
+    degree: "Next.js Certification",
+    school: "Vercel Academy",
+    year: "2023",
+    desc: "Advanced patterns, App Router & server components.",
+  },
+  {
+    id: 3,
+    icon: "🏆",
+    degree: "AWS Cloud Practitioner",
+    school: "Amazon Web Services",
+    year: "2023",
+    desc: "Certified cloud fundamentals & architecture.",
+  },
+  {
+    id: 4,
+    icon: "⚡",
+    degree: "Meta Frontend Professional",
+    school: "Coursera / Meta",
+    year: "2022",
+    desc: "React, UX design & advanced CSS techniques.",
+  },
+];
