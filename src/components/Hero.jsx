@@ -16,11 +16,12 @@ const CONFIG = {
   githubLabel: "github.com/yourname",
   linkedin: "https://linkedin.com/in/yourname",
   linkedinLabel: "linkedin.com/in/yourname",
-  stack: ["Next.js", "TypeScript", "Node.js", "Tailwind"],
+  // stack: ["Next.js", "TypeScript", "Node.js", "Tailwind"],
+  stack: ["Next.js", "JavaScript", "Node.js", "Tailwind"],
   stats: [
-    { num: "3+", label: "Years Exp." },
-    { num: "20+", label: "Projects Done" },
-    { num: "15+", label: "Happy Clients" },
+    { num: "1+", label: "Years Exp." },
+    { num: "10+", label: "Projects Done" },
+    // { num: "15+", label: "Happy Clients" },
   ],
 };
 
@@ -93,7 +94,7 @@ export default function Hero() {
         items-center gap-12 px-8 lg:px-16 pt-24 pb-16 overflow-hidden container mx-auto"
     >
       {/* Grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,200,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,200,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,200,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,200,0.03)_1px,transparent_1px)] bg-size-[60px_60px] pointer-events-none" />
 
       {/* ── LEFT COLUMN ── */}
       <div className="relative z-10 flex flex-col">
@@ -119,7 +120,7 @@ export default function Hero() {
             {...fadeUp(0.3)}
             className="block text-white/50 text-[0.38em] font-mono font-normal tracking-[0.18em] uppercase mb-2"
           >
-            Hi, I'm
+            Hi, I&apos;m
           </motion.span>
 
           {/* Typewriter line — cycles: name → "a Developer" → "a Builder" */}
@@ -166,7 +167,7 @@ export default function Hero() {
         <motion.p
           suppressHydrationWarning
           {...fadeUp(1.0)}
-          className="max-w-[480px] text-[0.95rem] leading-[1.85] text-white/38 mb-10"
+          className="max-w-120 text-[0.95rem] leading-[1.85] text-white/38 mb-10"
         >
           I craft high-performance web apps with obsessive attention to detail —
           pixel-perfect UIs, clean architecture, and scalable backend systems.
@@ -208,7 +209,7 @@ export default function Hero() {
         <motion.div
           suppressHydrationWarning
           {...fadeUp(1.4)}
-          className="flex gap-12 pt-8 border-t border-white/[0.05]"
+          className="flex gap-12 pt-8 border-t border-white/5"
         >
           {CONFIG.stats.map((s) => (
             <div key={s.label}>
@@ -232,7 +233,7 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 1.4 }}
         className="relative z-10 hidden lg:block"
       >
-        <div className="bg-white/[0.02] border border-[#00ffc8]/12 rounded-lg overflow-hidden font-mono text-[0.68rem]">
+        <div className="bg-white/2 border border-[#00ffc8]/12 rounded-lg overflow-hidden font-mono text-[0.68rem]">
           <div className="flex items-center gap-1.5 px-4 py-2.5 bg-[#00ffc8]/04 border-b border-[#00ffc8]/08">
             <span className="w-2 h-2 rounded-full bg-[#ff5f57]" />
             <span className="w-2 h-2 rounded-full bg-[#febc2e]" />
@@ -245,34 +246,41 @@ export default function Hero() {
             <p className="text-white/20">{"// developer profile"}</p>
             <p>{"{"}</p>
             <p>
-              &nbsp;&nbsp;<span className="text-sky-300">"name"</span>:{" "}
-              <span className="text-red-300">"{CONFIG.name}"</span>,
+              &nbsp;&nbsp;<span className="text-sky-300">&quot;name&quot;</span>
+              : <span className="text-red-300">&quot;{CONFIG.name}&quot;</span>,
             </p>
             <p>
-              &nbsp;&nbsp;<span className="text-sky-300">"role"</span>:{" "}
-              <span className="text-red-300">"{CONFIG.role}"</span>,
+              &nbsp;&nbsp;<span className="text-sky-300">&quot;role&quot;</span>
+              : <span className="text-red-300">&quot;{CONFIG.role}&quot;</span>,
             </p>
             <p>
-              &nbsp;&nbsp;<span className="text-sky-300">"location"</span>:{" "}
-              <span className="text-red-300">"{CONFIG.location}"</span>,
+              &nbsp;&nbsp;
+              <span className="text-sky-300">&quot;location&quot;</span>:{" "}
+              <span className="text-red-300">
+                &quot;{CONFIG.location}&quot;
+              </span>
+              ,
             </p>
             <p>
-              &nbsp;&nbsp;<span className="text-sky-300">"experience"</span>:{" "}
+              &nbsp;&nbsp;
+              <span className="text-sky-300">&quot;experience&quot;</span>:{" "}
               <span className="text-yellow-200">{CONFIG.experience}</span>,
             </p>
             <p>
-              &nbsp;&nbsp;<span className="text-sky-300">"stack"</span>: [
+              &nbsp;&nbsp;
+              <span className="text-sky-300">&quot;stack&quot;</span>: [
             </p>
             {CONFIG.stack.map((tech, i) => (
               <p key={tech}>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <span className="text-red-300">"{tech}"</span>
+                <span className="text-red-300">&quot;{tech}&quot;</span>
                 {i < CONFIG.stack.length - 1 ? "," : ""}
               </p>
             ))}
             <p>&nbsp;&nbsp;],</p>
             <p>
-              &nbsp;&nbsp;<span className="text-sky-300">"available"</span>:{" "}
+              &nbsp;&nbsp;
+              <span className="text-sky-300">&quot;available&quot;</span>:{" "}
               <span className="text-green-300">true</span>
             </p>
             <p>
@@ -290,7 +298,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="flex items-center gap-3 font-mono text-[0.65rem]
               tracking-wide text-white/30 px-3 py-2.5
-              border border-white/[0.05] rounded
+              border border-white/5 rounded
               hover:text-[#00ffc8] hover:border-[#00ffc8]/20
               hover:bg-[#00ffc8]/04 transition-all duration-200"
           >
@@ -302,7 +310,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="flex items-center gap-3 font-mono text-[0.65rem]
               tracking-wide text-white/30 px-3 py-2.5
-              border border-white/[0.05] rounded
+              border border-white/5 rounded
               hover:text-[#00ffc8] hover:border-[#00ffc8]/20
               hover:bg-[#00ffc8]/04 transition-all duration-200"
           >
@@ -313,7 +321,7 @@ export default function Hero() {
 
       {/* Scroll hint */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-[fadeIn_1s_2s_forwards]">
-        <div className="w-px h-9 bg-[#00ffc8]/50 animate-[scrollDown_1.6s_ease-in-out_infinite]" />
+        <div className="w-px h-9 bg-[#00ffc8]/50 animate-scroll-down" />
         <span className="font-mono text-[0.55rem] tracking-[0.2em] uppercase text-white/20">
           scroll
         </span>

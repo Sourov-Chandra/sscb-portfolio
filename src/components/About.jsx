@@ -3,14 +3,16 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { HiDownload } from "react-icons/hi";
+import { GiCoffeeCup } from "react-icons/gi";
+import { BsFillLightningChargeFill } from "react-icons/bs";
 
 const info = [
-  { label: "Name", value: "Your Name", accent: false },
-  { label: "Location", value: "Dhaka, BD", accent: false },
-  { label: "Email", value: "you@email.com", accent: true },
+  { label: "Name", value: "Sourov Chandra Barmon", accent: false },
+  { label: "Location", value: "Thakurgaon, Rangpur, Bangladesh", accent: false },
+  { label: "Email", value: "sourovtpi@yahoo.com", accent: true },
   { label: "Status", value: "Available ✦", accent: true },
-  { label: "Experience", value: "3+ Years", accent: false },
-  { label: "Degree", value: "B.Sc. CS", accent: false },
+  { label: "Experience", value: "1+ Years", accent: false },
+  { label: "Degree", value: "Diploma in Engineering", accent: false },
 ];
 
 // const strengths = [
@@ -27,9 +29,10 @@ const strengths = [
 
 const techs = [
   "Next.js",
+  'JavaScript',
   "TypeScript",
   "Node.js",
-  "PostgreSQL",
+  "MongoDB",
   "Docker",
   "Tailwind",
 ];
@@ -84,26 +87,27 @@ export default function About() {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <p className="text-[0.95rem] leading-[1.9] text-white/45 mb-5">
-            I'm a{" "}
+            I&apos;m a{" "}
             <span className="text-[#00ffc8] font-bold">
               Full-Stack Developer
             </span>{" "}
-            based in Dhaka, Bangladesh with 3+ years of experience building
+            based in Rangpur, Bangladesh with 1+ years of experience building
             modern web applications that are fast, accessible, and visually
             compelling.
           </p>
           <p className="text-[0.95rem] leading-[1.9] text-white/45 mb-5">
             I specialize in{" "}
             <span className="text-[#00ffc8] font-bold">
-              Next.js, TypeScript, and Node.js
+              Next.js, JavaScript, and Node.js
             </span>{" "}
-            — from pixel-perfect frontends to robust REST & GraphQL APIs. I care
-            deeply about clean code, great UX, and shipping products that
-            actually work.
+            — from pixel-perfect frontends to robust REST {/* & GraphQL */}{" "}
+            API(s). I care deeply about clean code, great UX, and shipping
+            products that actually work.
           </p>
           <p className="text-[0.95rem] leading-[1.9] text-white/45">
-            When I'm not coding, I'm exploring open source, reading about system
-            design, or brewing the perfect cup of coffee ☕
+            When I&apos;m not coding, I&apos;m exploring open source, reading
+            about system design, or brewing the perfect cup of coffee{" "}
+            <GiCoffeeCup className="inline" />
           </p>
 
           {/* Info grid */}
@@ -124,7 +128,9 @@ export default function About() {
 
           {/* Download CV */}
           <a
-            href="/cv.pdf"
+            // href="/cv.pdf"
+            // href="https://drive.google.com/file/d/1EDxz7r58js_-jnqmBQcsNd-M6HMe4Yaa/view?usp=sharing"
+            href="https://drive.google.com/uc?export=download&id=1EDxz7r58js_-jnqmBQcsNd-M6HMe4Yaa"
             download
             className="inline-flex items-center gap-2 mt-8
               bg-[#00ffc8] text-[#080c10] font-mono font-bold
@@ -144,17 +150,17 @@ export default function About() {
           className="flex flex-col gap-5"
         >
           {/* Projects completed card */}
-          <div className="bg-white/[0.02] border border-white/[0.06] rounded-lg p-6 hover:border-[#00ffc8]/20 transition-colors duration-300">
+          <div className="bg-white/2 border border-white/2 rounded-lg p-6 hover:border-[#00ffc8]/20 transition-colors duration-300">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-9 rounded-md bg-[#00ffc8]/08 border border-[#00ffc8]/15 flex items-center justify-center text-base">
-                ⚡
+                <BsFillLightningChargeFill />
               </div>
               <span className="font-mono text-[0.72rem] text-white/60 tracking-wider">
                 Projects Completed
               </span>
             </div>
             <div className="text-[1.6rem] font-extrabold text-white">
-              20<span className="text-[#00ffc8]">+</span>
+              10<span className="text-[#00ffc8]">+</span>
             </div>
             <div className="font-mono text-[0.62rem] text-white/25 tracking-wider mt-1">
               across web, mobile & api
@@ -162,10 +168,10 @@ export default function About() {
           </div>
 
           {/* Core Strengths — badge style, NO bars */}
-          <div className="bg-white/[0.02] border border-white/[0.06] rounded-lg p-6 hover:border-[#00ffc8]/20 transition-colors duration-300">
+          <div className="bg-white/2 border border-white/2 rounded-lg p-6 hover:border-[#00ffc8]/20 transition-colors duration-300">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-9 h-9 rounded-md bg-[#00ffc8]/08 border border-[#00ffc8]/15 flex items-center justify-center text-base">
-                🎯
+                
               </div>
               <span className="font-mono text-[0.72rem] text-white/60 tracking-wider">
                 Core Strengths
@@ -199,8 +205,8 @@ export default function About() {
                 <div
                   key={s.label}
                   className="flex items-center gap-3
-      px-4 py-3 rounded-md border border-white/[0.06]
-      bg-white/[0.02] hover:border-[#00ffc8]/25
+      px-4 py-3 rounded-md border border-white/2
+      bg-white/2 hover:border-[#00ffc8]/25
       hover:bg-[#00ffc8]/03 transition-all duration-200"
                 >
                   <span className="text-base">{s.icon}</span>
@@ -214,7 +220,7 @@ export default function About() {
           </div>
 
           {/* Tech tags card */}
-          <div className="bg-white/[0.02] border border-white/[0.06] rounded-lg p-6 hover:border-[#00ffc8]/20 transition-colors duration-300">
+          <div className="bg-white/2 border border-white/2 rounded-lg p-6 hover:border-[#00ffc8]/20 transition-colors duration-300">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-9 rounded-md bg-[#00ffc8]/08 border border-[#00ffc8]/15 flex items-center justify-center text-base">
                 🛠

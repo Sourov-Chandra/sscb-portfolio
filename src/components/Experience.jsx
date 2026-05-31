@@ -52,7 +52,7 @@ export default function Experience() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="font-mono text-[0.75rem] text-white/25 tracking-wider mb-12"
         >
-          // where I've worked & studied
+          {"// "} where I&apos;ve worked & studied
         </motion.p>
 
         {/* Tabs */}
@@ -85,7 +85,7 @@ export default function Experience() {
             {/* vertical line */}
             <div
               className="absolute left-0 top-2 bottom-2 w-px
-            bg-gradient-to-b from-[#00ffc8] to-[#00ffc8]/10"
+            bg-linear-to-b from-[#00ffc8] to-[#00ffc8]/10"
             />
 
             {workExperience.map((job, i) => (
@@ -98,14 +98,14 @@ export default function Experience() {
               >
                 {/* Timeline dot */}
                 <div
-                  className={`absolute -left-[2.35rem] top-1.5 w-2.5 h-2.5
+                  className={`absolute left-[2.35rem] top-1.5 w-2.5 h-2.5
                 rounded-full border-2 border-[#00ffc8] transition-all duration-300
                 ${job.current ? "bg-[#00ffc8]" : "bg-[#080c10] group-hover:bg-[#00ffc8]"}`}
                 />
 
                 {/* Card */}
                 <div
-                  className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-6
+                  className="bg-white/2 border border-white/2 rounded-xl p-6
                 hover:border-[#00ffc8]/20 hover:bg-[#00ffc8]/02 transition-all duration-300"
                 >
                   <div className="flex items-start justify-between gap-4 mb-2">
@@ -143,7 +143,7 @@ export default function Experience() {
                         className="flex items-start gap-2
                       text-[0.82rem] text-white/38"
                       >
-                        <span className="text-[#00ffc8] text-[0.65rem] mt-[3px] shrink-0">
+                        <span className="text-[#00ffc8] text-[0.65rem] mt-0.75 shrink-0">
                           ▸
                         </span>
                         {b}
@@ -177,7 +177,7 @@ export default function Experience() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-6
+                className="bg-white/2 border border-white/2 rounded-xl p-6
                 hover:border-[#00ffc8]/20 transition-all duration-300"
               >
                 <div className="text-[1.5rem] mb-3">{edu.icon}</div>
