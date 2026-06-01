@@ -46,7 +46,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${spaceMono.variable} ${syne.variable}`}>
+    <html suppressHydrationWarning lang="en" className={`${spaceMono.variable} ${syne.variable}`}>
       <body className="bg-[#080c10] text-white antialiased">{children}</body>
     </html>
   );

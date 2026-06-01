@@ -24,7 +24,8 @@ const info = [
 const strengths = [
   { icon: "⚡", label: "Frontend Development" },
   { icon: "🔧", label: "Backend Systems" },
-  { icon: "🐳", label: "Deployment & DevOps" },
+  // { icon: "🐳", label: "Deployment & DevOps" },
+  { icon: "🐳", label: "Deployment & Maintenance " },
 ];
 
 const techs = [
@@ -33,7 +34,7 @@ const techs = [
   "TypeScript",
   "Node.js",
   "MongoDB",
-  "Docker",
+  // "Docker",
   "Tailwind",
 ];
 
@@ -171,7 +172,7 @@ export default function About() {
           <div className="bg-white/2 border border-white/2 rounded-lg p-6 hover:border-[#00ffc8]/20 transition-colors duration-300">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-9 h-9 rounded-md bg-[#00ffc8]/08 border border-[#00ffc8]/15 flex items-center justify-center text-base">
-                
+                <BsFillLightningChargeFill />
               </div>
               <span className="font-mono text-[0.72rem] text-white/60 tracking-wider">
                 Core Strengths

@@ -63,7 +63,7 @@ export default function Projects() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="font-mono text-[0.75rem] text-white/25 tracking-wider mb-12"
       >
-        // things I've built with love & caffeine
+        // things I&apos;ve built with love & caffeine
       </motion.p>
 
       {/* Filter tabs */}
@@ -100,7 +100,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-            className="group bg-white/[0.02] border border-white/[0.06]
+            className="group bg-white/2 border border-white/6
               rounded-xl overflow-hidden
               hover:border-[#00ffc8]/25 hover:-translate-y-1
               transition-all duration-300"
@@ -201,7 +201,7 @@ export default function Projects() {
               </div>
 
               {/* Bottom links */}
-              <div className="flex gap-4 pt-3 border-t border-white/[0.05]">
+              <div className="flex gap-4 pt-3 border-t border-white/5">
                 {project.demo && (
                   <a
                     href={project.demo}

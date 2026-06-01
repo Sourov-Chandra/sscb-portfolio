@@ -6,21 +6,25 @@ import { motion, useInView } from "framer-motion";
 const skills = [
   { name: "Next.js", icon: "⬛", cat: "frontend" },
   { name: "React", icon: "⚛️", cat: "frontend" },
+  { name: "JavaScript", icon: "🟡", cat: "frontend" },
   { name: "TypeScript", icon: "🔷", cat: "frontend" },
   { name: "Tailwind CSS", icon: "🎨", cat: "frontend" },
   { name: "Framer Motion", icon: "🎭", cat: "frontend" },
-  { name: "Redux", icon: "🔮", cat: "frontend" },
+  // { name: "Redux", icon: "🔮", cat: "frontend" },
 
   { name: "Node.js", icon: "🟢", cat: "backend" },
   { name: "Express", icon: "🚂", cat: "backend" },
-  { name: "PostgreSQL", icon: "🐘", cat: "backend" },
+  // { name: "PostgreSQL", icon: "🐘", cat: "backend" },
   { name: "MongoDB", icon: "🍃", cat: "backend" },
+  { name: "Mongoose", icon: "🍃", cat: "backend" },
   { name: "Prisma", icon: "💎", cat: "backend" },
   { name: "GraphQL", icon: "🔺", cat: "backend" },
 
-  { name: "Docker", icon: "🐳", cat: "tools" },
+  // { name: "Docker", icon: "🐳", cat: "tools" },
   { name: "Git", icon: "🌿", cat: "tools" },
+  { name: "Github", icon: "🐙", cat: "tools" },
   { name: "Vercel", icon: "▲", cat: "tools" },
+  { name: "Netlify", icon: "🌲", cat: "tools" },
   { name: "Figma", icon: "🎯", cat: "tools" },
 ];
 
@@ -129,8 +133,8 @@ export default function Skills() {
             }}
             className="
               group
-              bg-white/[0.02]
-              border border-white/[0.06]
+              bg-white/3
+              border border-white/6
               rounded-xl
               p-5
               flex flex-col items-center justify-center
@@ -138,7 +142,7 @@ export default function Skills() {
               transition-all duration-300
               hover:-translate-y-1
               hover:border-[#00ffc8]/30
-              hover:bg-[#00ffc8]/[0.03]
+              hover:bg-[#00ffc8]/3
             "
           >
             {/* Icon */}
