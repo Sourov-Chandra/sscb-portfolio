@@ -177,7 +177,7 @@ export default function Contact() {
               style={{
                 fontSize: "0.65rem",
                 letterSpacing: "3px",
-                color: "var(--cyan, #00e5cc)",
+                color: "var(--cyan, #00ffc8)",
                 textTransform: "uppercase",
                 marginBottom: "0.5rem",
                 display: "flex",
@@ -186,7 +186,7 @@ export default function Contact() {
                 fontFamily: "var(--mono, monospace)",
               }}
             >
-              <span style={{ color: "#4a6860" }}>{"// "}</span> Get In Touch
+              <span style={{ color: "#708d85" }}>{"// "}</span> Get In Touch
             </p>
             <h2
               className="contact-heading"
@@ -200,7 +200,7 @@ export default function Contact() {
             >
               Let&apos;s Build Something
               <br />
-              <span style={{ color: "var(--cyan, #00e5cc)" }}>
+              <span style={{ color: "var(--cyan, #00ffc8)" }}>
                 Great Together.
               </span>
             </h2>
@@ -209,7 +209,7 @@ export default function Contact() {
                 width: "50px",
                 height: "2px",
                 background:
-                  "linear-gradient(90deg, var(--cyan, #00e5cc), transparent)",
+                  "linear-gradient(90deg, var(--cyan, #00ffc8), transparent)",
               }}
             />
           </motion.div>
@@ -262,18 +262,18 @@ export default function Contact() {
                         gap: "1rem",
                         padding: "1rem 1.25rem",
                         background: "var(--bg2, #0d1417)",
-                        border: "1px solid rgba(0,229,204,0.1)",
+                        border: "1px solid rgba(0,255,200,0.15)",
                         transition: "border-color 0.3s",
                         cursor: item.href ? "pointer" : "default",
                         textDecoration: "none",
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.borderColor =
-                          "rgba(0,229,204,0.3)";
+                          "rgba(0,255,200,0.45)";
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.borderColor =
-                          "rgba(0,229,204,0.1)";
+                          "rgba(0,255,200,0.15)";
                       }}
                     >
                       <div
@@ -295,7 +295,7 @@ export default function Contact() {
                         <div
                           style={{
                             fontSize: "0.6rem",
-                            color: "var(--text3, #4a6860)",
+                            color: "var(--text3, #8aa8a0)",
                             letterSpacing: "1.5px",
                             textTransform: "uppercase",
                             fontFamily: "var(--mono, monospace)",
@@ -339,11 +339,11 @@ export default function Contact() {
                     style={{
                       width: "40px",
                       height: "40px",
-                      border: "1px solid rgba(0,229,204,0.1)",
+                      border: "1px solid rgba(0,255,200,0.15)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      color: "var(--text3, #4a6860)",
+                      color: "var(--text3, #8aa8a0)",
                       textDecoration: "none",
                       fontSize: "0.72rem",
                       fontFamily: "var(--mono, monospace)",
@@ -351,12 +351,12 @@ export default function Contact() {
                       transition: "color 0.2s, border-color 0.2s",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "var(--cyan, #00e5cc)";
-                      e.currentTarget.style.borderColor = "rgba(0,229,204,0.4)";
+                      e.currentTarget.style.color = "var(--cyan, #00ffc8)";
+                      e.currentTarget.style.borderColor = "rgba(0,255,200,0.45)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "var(--text3, #4a6860)";
-                      e.currentTarget.style.borderColor = "rgba(0,229,204,0.1)";
+                      e.currentTarget.style.color = "var(--text3, #8aa8a0)";
+                      e.currentTarget.style.borderColor = "rgba(0,255,200,0.15)";
                     }}
                   >
                     {s.label}
@@ -377,7 +377,7 @@ export default function Contact() {
                 className="form-card"
                 style={{
                   background: "var(--bg2, #0d1417)",
-                  border: "1px solid rgba(0,229,204,0.12)",
+                  border: "1px solid rgba(0,255,200,0.15)",
                   padding: "2rem",
                   position: "relative",
                 }}
@@ -388,7 +388,7 @@ export default function Contact() {
                     position: "absolute",
                     top: "-1px",
                     left: "1.5rem",
-                    background: "var(--cyan, #00e5cc)",
+                    background: "var(--cyan, #00ffc8)",
                     color: "#080c0e",
                     fontSize: "0.6rem",
                     padding: "2px 10px",
@@ -459,7 +459,7 @@ export default function Contact() {
                           ? "#00e599"
                           : status === "error"
                             ? "#e24b4a"
-                            : "var(--cyan, #00e5cc)",
+                            : "var(--cyan, #00ffc8)",
                       color: "#080c0e",
                       border: "none",
                       padding: "14px",
@@ -523,7 +523,7 @@ function FormField({
   const inputStyle = {
     width: "100%",
     background: "var(--bg3, #111820)",
-    border: `1px solid ${focused ? "var(--cyan, #00e5cc)" : "rgba(0,229,204,0.1)"}`,
+    border: `1px solid ${focused ? "var(--cyan, #00ffc8)" : "rgba(0,255,200,0.15)"}`,
     color: "var(--text, #e8f4f0)",
     fontFamily: "var(--mono, monospace)",
     fontSize: "0.78rem",
@@ -540,7 +540,7 @@ function FormField({
       <label
         style={{
           fontSize: "0.6rem",
-          color: focused ? "var(--cyan, #00e5cc)" : "var(--text3, #4a6860)",
+          color: focused ? "var(--cyan, #00ffc8)" : "var(--text3, #8aa8a0)",
           letterSpacing: "1.5px",
           textTransform: "uppercase",
           display: "block",

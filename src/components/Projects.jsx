@@ -49,8 +49,8 @@ export default function Projects() {
       >
         My{" "}
         <span
-          className="text-transparent"
-          style={{ WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
+          className="text-white/30 lg:text-transparent"
+          style={{ WebkitTextStroke: "1px rgba(255,255,255,0.65)" }}
         >
           Work
         </span>
@@ -61,7 +61,7 @@ export default function Projects() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="font-mono text-[0.75rem] text-white/25 tracking-wider mb-12"
+        className="font-mono text-[0.75rem] text-white/55 tracking-wider mb-12"
       >
         // things I&apos;ve built with love & caffeine
       </motion.p>
@@ -100,9 +100,9 @@ export default function Projects() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-            className="group bg-white/2 border border-white/6
+            className="group bg-white/2 border border-[#00ffc8]/15
               rounded-xl overflow-hidden
-              hover:border-[#00ffc8]/25 hover:-translate-y-1
+              hover:border-[#00ffc8]/45 hover:-translate-y-1
               transition-all duration-300"
           >
             {/* Image / thumbnail */}
@@ -177,12 +177,12 @@ export default function Projects() {
                 <h3 className="text-[1rem] font-bold text-white leading-snug">
                   {project.name}
                 </h3>
-                <span className="font-mono text-[0.6rem] text-white/20 pt-0.5 shrink-0">
+                <span className="font-mono text-[0.6rem] text-white/50 pt-0.5 shrink-0">
                   {project.year}
                 </span>
               </div>
 
-              <p className="text-[0.82rem] leading-[1.75] text-white/40 mb-4">
+              <p className="text-[0.82rem] leading-[1.75] text-white/70 mb-4">
                 {project.desc}
               </p>
 
@@ -193,7 +193,7 @@ export default function Projects() {
                     key={tag}
                     className="font-mono text-[0.58rem] tracking-wider
                       px-2.5 py-1 rounded-full border border-white/08
-                      text-white/40"
+                      text-white/60"
                   >
                     {tag}
                   </span>
@@ -208,7 +208,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1.5 font-mono text-[0.6rem]
-                      tracking-wider text-white/35 hover:text-[#00ffc8] transition-colors"
+                      tracking-wider text-white/65 hover:text-[#00ffc8] transition-colors"
                   >
                     <HiExternalLink size={13} /> Live Demo
                   </a>
@@ -218,7 +218,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 font-mono text-[0.6rem]
-                    tracking-wider text-white/35 hover:text-[#00ffc8] transition-colors"
+                    tracking-wider text-white/65 hover:text-[#00ffc8] transition-colors"
                 >
                   <FaGithub size={13} /> Source Code
                 </a>

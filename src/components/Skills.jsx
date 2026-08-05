@@ -2,30 +2,48 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import {
+  SiNextdotjs,
+  SiJavascript,
+  SiTypescript,
+  SiTailwindcss,
+  SiFramer,
+  SiExpress,
+  SiMongodb,
+  SiMongoose,
+  SiPrisma,
+  SiGraphql,
+  SiVercel,
+  SiNetlify,
+} from "react-icons/si";
+import {
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaFigma,
+} from "react-icons/fa";
 
 const skills = [
-  { name: "Next.js", icon: "⬛", cat: "frontend" },
-  { name: "React", icon: "⚛️", cat: "frontend" },
-  { name: "JavaScript", icon: "🟡", cat: "frontend" },
-  { name: "TypeScript", icon: "🔷", cat: "frontend" },
-  { name: "Tailwind CSS", icon: "🎨", cat: "frontend" },
-  { name: "Framer Motion", icon: "🎭", cat: "frontend" },
-  // { name: "Redux", icon: "🔮", cat: "frontend" },
+  { name: "Next.js", icon: <SiNextdotjs className="text-white" />, cat: "frontend" },
+  { name: "React", icon: <FaReact className="text-[#61dafb]" />, cat: "frontend" },
+  { name: "JavaScript", icon: <SiJavascript className="text-[#f7df1e] rounded-sm bg-black" />, cat: "frontend" },
+  { name: "TypeScript", icon: <SiTypescript className="text-[#3178c6] rounded-sm bg-white" />, cat: "frontend" },
+  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#38bdf8]" />, cat: "frontend" },
+  { name: "Framer Motion", icon: <SiFramer className="text-[#f43f5e]" />, cat: "frontend" },
 
-  { name: "Node.js", icon: "🟢", cat: "backend" },
-  { name: "Express", icon: "🚂", cat: "backend" },
-  // { name: "PostgreSQL", icon: "🐘", cat: "backend" },
-  { name: "MongoDB", icon: "🍃", cat: "backend" },
-  { name: "Mongoose", icon: "🍃", cat: "backend" },
-  { name: "Prisma", icon: "💎", cat: "backend" },
-  { name: "GraphQL", icon: "🔺", cat: "backend" },
+  { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" />, cat: "backend" },
+  { name: "Express", icon: <SiExpress className="text-[#ffffff]" />, cat: "backend" },
+  { name: "MongoDB", icon: <SiMongodb className="text-[#47a248]" />, cat: "backend" },
+  { name: "Mongoose", icon: <SiMongoose className="text-[#880000]" />, cat: "backend" },
+  { name: "Prisma", icon: <SiPrisma className="text-[#ffffff]" />, cat: "backend" },
+  { name: "GraphQL", icon: <SiGraphql className="text-[#e10098]" />, cat: "backend" },
 
-  // { name: "Docker", icon: "🐳", cat: "tools" },
-  { name: "Git", icon: "🌿", cat: "tools" },
-  { name: "Github", icon: "🐙", cat: "tools" },
-  { name: "Vercel", icon: "▲", cat: "tools" },
-  { name: "Netlify", icon: "🌲", cat: "tools" },
-  { name: "Figma", icon: "🎯", cat: "tools" },
+  { name: "Git", icon: <FaGitAlt className="text-[#f05032]" />, cat: "tools" },
+  { name: "Github", icon: <FaGithub className="text-[#ffffff]" />, cat: "tools" },
+  { name: "Vercel", icon: <SiVercel className="text-[#ffffff]" />, cat: "tools" },
+  { name: "Netlify", icon: <SiNetlify className="text-[#00ad9f]" />, cat: "tools" },
+  { name: "Figma", icon: <FaFigma className="text-[#f24e1e]" />, cat: "tools" },
 ];
 
 const tabs = ["All", "Frontend", "Backend", "Tools"];
@@ -74,9 +92,9 @@ export default function Skills() {
       >
         My{" "}
         <span
-          className="text-transparent"
+          className="text-white/30 lg:text-transparent"
           style={{
-            WebkitTextStroke: "1px rgba(255,255,255,0.2)",
+            WebkitTextStroke: "1px rgba(255,255,255,0.65)",
           }}
         >
           Tech
@@ -89,7 +107,7 @@ export default function Skills() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.5, delay: 0.25 }}
-        className="font-mono text-[0.75rem] text-white/25 tracking-wider mb-12"
+        className="font-mono text-[0.75rem] text-white/55 tracking-wider mb-12"
       >
         // technologies I use to build modern web applications
       </motion.p>
@@ -112,7 +130,7 @@ export default function Skills() {
               ${
                 active === tab
                   ? "border-[#00ffc8] text-[#00ffc8] bg-[#00ffc8]/10"
-                  : "border-white/10 text-white/40 hover:border-[#00ffc8]/30 hover:text-[#00ffc8]"
+                  : "border-white/10 text-white/60 hover:border-[#00ffc8]/30 hover:text-[#00ffc8]"
               }`}
           >
             {tab}
@@ -134,14 +152,14 @@ export default function Skills() {
             className="
               group
               bg-white/3
-              border border-white/6
+              border border-[#00ffc8]/12
               rounded-xl
               p-5
               flex flex-col items-center justify-center
               gap-3
               transition-all duration-300
               hover:-translate-y-1
-              hover:border-[#00ffc8]/30
+              hover:border-[#00ffc8]/45
               hover:bg-[#00ffc8]/3
             "
           >

@@ -72,8 +72,8 @@ export default function About() {
       >
         Who I{" "}
         <span
-          className="text-transparent"
-          style={{ WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
+          className="text-white/30 lg:text-transparent"
+          style={{ WebkitTextStroke: "1px rgba(255,255,255,0.65)" }}
         >
           Am
         </span>
@@ -87,7 +87,7 @@ export default function About() {
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <p className="text-[0.95rem] leading-[1.9] text-white/45 mb-5">
+          <p className="text-[0.95rem] leading-[1.9] text-white/75 mb-5">
             I&apos;m a{" "}
             <span className="text-[#00ffc8] font-bold">
               Full-Stack Developer
@@ -96,7 +96,7 @@ export default function About() {
             modern web applications that are fast, accessible, and visually
             compelling.
           </p>
-          <p className="text-[0.95rem] leading-[1.9] text-white/45 mb-5">
+          <p className="text-[0.95rem] leading-[1.9] text-white/75 mb-5">
             I specialize in{" "}
             <span className="text-[#00ffc8] font-bold">
               Next.js, JavaScript, and Node.js
@@ -105,7 +105,7 @@ export default function About() {
             API(s). I care deeply about clean code, great UX, and shipping
             products that actually work.
           </p>
-          <p className="text-[0.95rem] leading-[1.9] text-white/45">
+          <p className="text-[0.95rem] leading-[1.9] text-white/75">
             When I&apos;m not coding, I&apos;m exploring open source, reading
             about system design, or brewing the perfect cup of coffee{" "}
             <GiCoffeeCup className="inline" />
@@ -115,11 +115,11 @@ export default function About() {
           <div className="grid grid-cols-2 gap-4 mt-8">
             {info.map((item) => (
               <div key={item.label} className="flex flex-col gap-1">
-                <span className="font-mono text-[0.58rem] tracking-[0.18em] uppercase text-white/25">
+                <span className="font-mono text-[0.58rem] tracking-[0.18em] uppercase text-white/55">
                   {item.label}
                 </span>
                 <span
-                  className={`font-mono text-[0.75rem] ${item.accent ? "text-[#00ffc8]" : "text-white/75"}`}
+                  className={`font-mono text-[0.75rem] ${item.accent ? "text-[#00ffc8]" : "text-white/80"}`}
                 >
                   {item.value}
                 </span>
@@ -151,30 +151,30 @@ export default function About() {
           className="flex flex-col gap-5"
         >
           {/* Projects completed card */}
-          <div className="bg-white/2 border border-white/2 rounded-lg p-6 hover:border-[#00ffc8]/20 transition-colors duration-300">
+          <div className="bg-white/2 border border-[#00ffc8]/15 rounded-lg p-6 hover:border-[#00ffc8]/40 transition-colors duration-300">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-9 rounded-md bg-[#00ffc8]/08 border border-[#00ffc8]/15 flex items-center justify-center text-base">
                 <BsFillLightningChargeFill />
               </div>
-              <span className="font-mono text-[0.72rem] text-white/60 tracking-wider">
+              <span className="font-mono text-[0.72rem] text-white/75 tracking-wider">
                 Projects Completed
               </span>
             </div>
             <div className="text-[1.6rem] font-extrabold text-white">
               10<span className="text-[#00ffc8]">+</span>
             </div>
-            <div className="font-mono text-[0.62rem] text-white/25 tracking-wider mt-1">
+            <div className="font-mono text-[0.62rem] text-white/55 tracking-wider mt-1">
               across web, mobile & api
             </div>
           </div>
 
           {/* Core Strengths — badge style, NO bars */}
-          <div className="bg-white/2 border border-white/2 rounded-lg p-6 hover:border-[#00ffc8]/20 transition-colors duration-300">
+          <div className="bg-white/2 border border-[#00ffc8]/15 rounded-lg p-6 hover:border-[#00ffc8]/40 transition-colors duration-300">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-9 h-9 rounded-md bg-[#00ffc8]/08 border border-[#00ffc8]/15 flex items-center justify-center text-base">
                 <BsFillLightningChargeFill />
               </div>
-              <span className="font-mono text-[0.72rem] text-white/60 tracking-wider">
+              <span className="font-mono text-[0.72rem] text-white/75 tracking-wider">
                 Core Strengths
               </span>
             </div>
@@ -206,13 +206,13 @@ export default function About() {
                 <div
                   key={s.label}
                   className="flex items-center gap-3
-      px-4 py-3 rounded-md border border-white/2
-      bg-white/2 hover:border-[#00ffc8]/25
+      px-4 py-3 rounded-md border border-[#00ffc8]/12
+      bg-white/2 hover:border-[#00ffc8]/35
       hover:bg-[#00ffc8]/03 transition-all duration-200"
                 >
                   <span className="text-base">{s.icon}</span>
 
-                  <span className="font-mono text-[0.7rem] text-white/65 tracking-wider">
+                  <span className="font-mono text-[0.7rem] text-white/85 tracking-wider">
                     {s.label}
                   </span>
                 </div>
@@ -221,12 +221,12 @@ export default function About() {
           </div>
 
           {/* Tech tags card */}
-          <div className="bg-white/2 border border-white/2 rounded-lg p-6 hover:border-[#00ffc8]/20 transition-colors duration-300">
+          <div className="bg-white/2 border border-[#00ffc8]/15 rounded-lg p-6 hover:border-[#00ffc8]/40 transition-colors duration-300">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-9 rounded-md bg-[#00ffc8]/08 border border-[#00ffc8]/15 flex items-center justify-center text-base">
                 🛠
               </div>
-              <span className="font-mono text-[0.72rem] text-white/60 tracking-wider">
+              <span className="font-mono text-[0.72rem] text-white/75 tracking-wider">
                 Tech I Love
               </span>
             </div>

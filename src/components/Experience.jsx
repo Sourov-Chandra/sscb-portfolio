@@ -39,8 +39,8 @@ export default function Experience() {
         >
           My{" "}
           <span
-            className="text-transparent"
-            style={{ WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
+            className="text-white/30 lg:text-transparent"
+            style={{ WebkitTextStroke: "1px rgba(255,255,255,0.65)" }}
           >
             Journey
           </span>
@@ -50,7 +50,7 @@ export default function Experience() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="font-mono text-[0.75rem] text-white/25 tracking-wider mb-12"
+          className="font-mono text-[0.75rem] text-white/55 tracking-wider mb-12"
         >
           {"// "} where I&apos;ve worked & studied
         </motion.p>
@@ -105,8 +105,8 @@ export default function Experience() {
 
                 {/* Card */}
                 <div
-                  className="bg-white/2 border border-white/2 rounded-xl p-6
-                hover:border-[#00ffc8]/20 hover:bg-[#00ffc8]/02 transition-all duration-300"
+                  className="bg-white/2 border border-[#00ffc8]/15 rounded-xl p-6
+                hover:border-[#00ffc8]/45 hover:bg-[#00ffc8]/02 transition-all duration-300"
                 >
                   <div className="flex items-start justify-between gap-4 mb-2">
                     <h3 className="text-[1rem] font-bold text-white">
@@ -123,7 +123,7 @@ export default function Experience() {
 
                   <div
                     className="flex items-center gap-1.5 font-mono text-[0.72rem]
-                  text-white/40 mb-4"
+                  text-white/70 mb-4"
                   >
                     <span className="text-[#00ffc8]">{job.company}</span>
                     <span>·</span>
@@ -132,7 +132,7 @@ export default function Experience() {
                     <span>{job.location}</span>
                   </div>
 
-                  <p className="text-[0.85rem] leading-[1.8] text-white/40 mb-4">
+                  <p className="text-[0.85rem] leading-[1.8] text-white/70 mb-4">
                     {job.desc}
                   </p>
 
@@ -141,7 +141,7 @@ export default function Experience() {
                       <li
                         key={j}
                         className="flex items-start gap-2
-                      text-[0.82rem] text-white/38"
+                      text-[0.82rem] text-white/65"
                       >
                         <span className="text-[#00ffc8] text-[0.65rem] mt-0.75 shrink-0">
                           ▸
@@ -156,7 +156,7 @@ export default function Experience() {
                       <span
                         key={tag}
                         className="font-mono text-[0.58rem] tracking-wider
-                      px-2.5 py-1 rounded-full border border-white/08 text-white/38"
+                      px-2.5 py-1 rounded-full border border-white/08 text-white/65"
                       >
                         {tag}
                       </span>
@@ -177,8 +177,8 @@ export default function Experience() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="bg-white/2 border border-white/2 rounded-xl p-6
-                hover:border-[#00ffc8]/20 transition-all duration-300"
+                className="bg-white/2 border border-[#00ffc8]/15 rounded-xl p-6
+                hover:border-[#00ffc8]/45 transition-all duration-300"
               >
                 <div className="text-[1.5rem] mb-3">{edu.icon}</div>
                 <h3 className="text-[0.95rem] font-bold text-white mb-1">
@@ -187,10 +187,10 @@ export default function Experience() {
                 <div className="font-mono text-[0.68rem] text-[#00ffc8]/70 mb-1">
                   {edu.school}
                 </div>
-                <div className="font-mono text-[0.6rem] text-white/25 mb-3">
+                <div className="font-mono text-[0.6rem] text-white/50 mb-3">
                   {edu.year}
                 </div>
-                <p className="text-[0.8rem] text-white/35 leading-[1.6]">
+                <p className="text-[0.8rem] text-white/65 leading-[1.6]">
                   {edu.desc}
                 </p>
               </motion.div>

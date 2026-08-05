@@ -154,8 +154,8 @@ export default function Hero() {
           <motion.span
             suppressHydrationWarning
             {...fadeUp(0.8)}
-            className="block text-transparent"
-            style={{ WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
+            className="block text-white/30 lg:text-transparent"
+            style={{ WebkitTextStroke: "1px rgba(255,255,255,0.65)" }}
           >
             For the Web.
           </motion.span>
@@ -167,7 +167,7 @@ export default function Hero() {
         <motion.p
           suppressHydrationWarning
           {...fadeUp(1.0)}
-          className="max-w-120 text-[0.95rem] leading-[1.85] text-white/38 mb-10"
+          className="max-w-120 text-[0.95rem] leading-[1.85] text-white/65 mb-10"
         >
           I craft high-performance web apps with obsessive attention to detail —
           pixel-perfect UIs, clean architecture, and scalable backend systems.
@@ -217,7 +217,7 @@ export default function Hero() {
                 {s.num.replace("+", "")}
                 <span className="text-[#00ffc8]">+</span>
               </div>
-              <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase text-white/25 mt-1">
+              <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase text-white/55 mt-1">
                 {s.label}
               </div>
             </div>
@@ -238,12 +238,12 @@ export default function Hero() {
             <span className="w-2 h-2 rounded-full bg-[#ff5f57]" />
             <span className="w-2 h-2 rounded-full bg-[#febc2e]" />
             <span className="w-2 h-2 rounded-full bg-[#28c840]" />
-            <span className="ml-2 text-white/25 text-[0.62rem]">
+            <span className="ml-2 text-white/55 text-[0.62rem]">
               about.json
             </span>
           </div>
-          <div className="p-4 leading-[2.1]">
-            <p className="text-white/20">{"// developer profile"}</p>
+          <div className="p-4 leading-[2.1] text-white/70">
+            <p className="text-white/45">{"// developer profile"}</p>
             <p>{"{"}</p>
             <p>
               &nbsp;&nbsp;<span className="text-sky-300">&quot;name&quot;</span>
