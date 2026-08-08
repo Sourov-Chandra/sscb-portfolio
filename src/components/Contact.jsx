@@ -7,13 +7,13 @@ const contactItems = [
   {
     icon: "✉",
     label: "Email",
-    value: "you@email.com",
+    value: "sourov.cb.tech@email.com",
     href: "mailto:you@email.com",
   },
   {
     icon: "📍",
     label: "Location",
-    value: "Dhaka, Bangladesh",
+    value: "Thakurgaon, Bangladesh",
     href: null,
   },
   {
@@ -25,10 +25,18 @@ const contactItems = [
 ];
 
 const socialLinks = [
-  { label: "GH", href: "https://github.com/yourname", title: "GitHub" },
-  { label: "LI", href: "https://linkedin.com/in/yourname", title: "LinkedIn" },
-  { label: "TW", href: "https://twitter.com/yourname", title: "Twitter" },
-  { label: "DR", href: "https://dribbble.com/yourname", title: "Dribbble" },
+  { label: "GH", href: "https://github.com/Sourov-Chandra", title: "GitHub" },
+  {
+    label: "LI",
+    href: "https://www.linkedin.com/in/sourov-chandra-barmon/",
+    title: "LinkedIn",
+  },
+  { label: "X", href: "https://x.com/Sourov_tpi", title: "Twitter" },
+  {
+    label: "DR",
+    href: "https://www.facebook.com/sourov.chandra.barmon.dev",
+    title: "Dribbble",
+  },
 ];
 
 const fadeUp = {
