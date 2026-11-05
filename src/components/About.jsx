@@ -124,12 +124,16 @@ export default function About() {
           <a
             href="/cv.pdf"
             download="Sourov_Chandra_Barmon_Resume.pdf"
-            className="inline-flex items-center gap-2 mt-8
-              bg-[#00ffc8] text-[#080c10] font-mono font-bold
-              text-[0.72rem] tracking-wider px-7 py-3.5 rounded
-              hover:bg-[#00e6b4] hover:-translate-y-0.5 transition-all duration-150"
+            className="group inline-flex items-center gap-2.5 mt-8
+              bg-linear-to-r from-[#00ffc8] to-[#00d4ff] text-[#080c10]
+              font-mono font-extrabold text-[0.75rem] tracking-wider
+              px-8 py-3.5 rounded-lg shadow-[0_0_20px_rgba(0,255,200,0.35)]
+              hover:shadow-[0_0_30px_rgba(0,255,200,0.6)]
+              hover:from-[#00e6b4] hover:to-[#00bfe6]
+              hover:-translate-y-0.5 transition-all duration-200"
           >
-            Download CV <HiDownload size={16} />
+            <span>Download Resume</span>
+            <HiDownload size={17} className="group-hover:translate-y-0.5 transition-transform duration-200" />
           </a>
         </motion.div>
 

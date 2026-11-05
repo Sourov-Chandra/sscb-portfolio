@@ -14,6 +14,7 @@ const syne = Syne({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://github.com/Sourov-Chandra"),
   title: "Sourov Chandra Barmon | Full-Stack Web Developer",
   description:
     "Full-Stack Web Developer based in Thakurgaon, Rangpur, Bangladesh. Specializing in Next.js, React, Node.js, Express.js, MongoDB, and BetterAuth.",

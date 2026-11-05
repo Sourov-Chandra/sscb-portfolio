@@ -177,32 +177,38 @@ export default function Hero() {
         <motion.div
           suppressHydrationWarning
           {...fadeUp(1.2)}
-          className="flex gap-4 mb-14"
+          className="flex flex-wrap gap-4 mb-14 items-center"
         >
+          <a
+            href={CONFIG.cvPath}
+            download="Sourov_Chandra_Barmon_Resume.pdf"
+            className="group flex items-center gap-2.5
+              bg-linear-to-r from-[#00ffc8] to-[#00d4ff] text-[#080c10]
+              font-mono font-extrabold text-[0.75rem] tracking-wider
+              px-8 py-3.5 rounded-lg shadow-[0_0_20px_rgba(0,255,200,0.35)]
+              hover:shadow-[0_0_30px_rgba(0,255,200,0.6)]
+              hover:from-[#00e6b4] hover:to-[#00bfe6]
+              hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <span>Download CV</span>
+            <HiDownload size={16} className="group-hover:translate-y-0.5 transition-transform duration-200" />
+          </a>
+
           <button
             onClick={() =>
               document
                 .getElementById("projects")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="flex items-center gap-2 bg-[#00ffc8] text-[#080c10]
-              font-mono font-bold text-[0.72rem] tracking-wider
-              px-7 py-3.5 rounded hover:-translate-y-0.5
-              hover:bg-[#00e6b4] transition-all duration-150"
+            className="flex items-center gap-2 border border-[#00ffc8]/30
+              text-[#00ffc8] hover:text-white hover:border-[#00ffc8]/80
+              bg-[#00ffc8]/06 hover:bg-[#00ffc8]/15
+              font-mono font-bold text-[0.75rem] tracking-wider
+              px-7 py-3.5 rounded-lg hover:-translate-y-0.5
+              transition-all duration-200"
           >
             View Projects <HiArrowRight size={15} />
           </button>
-
-          <a
-            href={CONFIG.cvPath}
-            download="Sourov_Chandra_Barmon_Resume.pdf"
-            className="flex items-center gap-2 border border-white/10
-              text-white/50 font-mono text-[0.72rem] tracking-wider
-              px-7 py-3.5 rounded hover:border-[#00ffc8]/40
-              hover:text-[#00ffc8] hover:-translate-y-0.5 transition-all duration-150"
-          >
-            Download CV <HiDownload size={15} />
-          </a>
         </motion.div>
 
         {/* Stats */}
