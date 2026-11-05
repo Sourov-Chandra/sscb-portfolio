@@ -14,31 +14,38 @@ const syne = Syne({
 });
 
 export const metadata = {
-  title: "Sourov Chandra Barmon | Full-Stack Developer",
+  title: "Sourov Chandra Barmon | Full-Stack Web Developer",
   description:
-    "Full-Stack Developer based in Dhaka, Bangladesh. Specializing in Next.js, TypeScript & Node.js.",
+    "Full-Stack Web Developer based in Thakurgaon, Rangpur, Bangladesh. Specializing in Next.js, React, Node.js, Express.js, MongoDB, and BetterAuth.",
   keywords: [
+    "Sourov Chandra Barmon",
+    "Full-Stack Developer",
+    "MERN Developer",
     "Next.js",
     "React",
-    "Full-Stack",
-    "Developer",
+    "Express.js",
+    "MongoDB",
+    "BetterAuth",
+    "Tailwind CSS",
     "Portfolio",
-    "Dhaka",
+    "Bangladesh",
   ],
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Sourov Chandra Barmon" }],
   openGraph: {
-    title: "Your Name | Full-Stack Developer",
-    description: "Full-Stack Developer based in Dhaka, Bangladesh.",
-    url: "https://yourportfolio.com",
-    siteName: "Your Name Portfolio",
+    title: "Sourov Chandra Barmon | Full-Stack Web Developer",
+    description:
+      "Full-Stack Web Developer based in Thakurgaon, Rangpur, Bangladesh. Specializing in Next.js, Express, MongoDB, and BetterAuth.",
+    url: "https://github.com/Sourov-Chandra",
+    siteName: "Sourov Chandra Barmon Portfolio",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Your Name | Full-Stack Developer",
-    description: "Full-Stack Developer based in Dhaka, Bangladesh.",
+    title: "Sourov Chandra Barmon | Full-Stack Web Developer",
+    description:
+      "Full-Stack Web Developer based in Thakurgaon, Rangpur, Bangladesh.",
     images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },

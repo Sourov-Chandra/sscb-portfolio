@@ -7,14 +7,17 @@ import {
   SiJavascript,
   SiTypescript,
   SiTailwindcss,
-  SiFramer,
   SiExpress,
   SiMongodb,
   SiMongoose,
-  SiPrisma,
-  SiGraphql,
   SiVercel,
-  SiNetlify,
+  SiShadcnui,
+  SiDaisyui,
+  SiHtml5,
+  SiFirebase,
+  SiJsonwebtokens,
+  SiPostman,
+  SiStripe,
 } from "react-icons/si";
 import {
   FaReact,
@@ -22,28 +25,38 @@ import {
   FaGitAlt,
   FaGithub,
   FaFigma,
+  FaCss3Alt,
+  FaShieldAlt,
 } from "react-icons/fa";
 
 const skills = [
+  // Frontend
   { name: "Next.js", icon: <SiNextdotjs className="text-white" />, cat: "frontend" },
-  { name: "React", icon: <FaReact className="text-[#61dafb]" />, cat: "frontend" },
-  { name: "JavaScript", icon: <SiJavascript className="text-[#f7df1e] rounded-sm bg-black" />, cat: "frontend" },
+  { name: "React.js", icon: <FaReact className="text-[#61dafb]" />, cat: "frontend" },
   { name: "TypeScript", icon: <SiTypescript className="text-[#3178c6] rounded-sm bg-white" />, cat: "frontend" },
+  { name: "JavaScript", icon: <SiJavascript className="text-[#f7df1e] rounded-sm bg-black" />, cat: "frontend" },
   { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#38bdf8]" />, cat: "frontend" },
-  { name: "Framer Motion", icon: <SiFramer className="text-[#f43f5e]" />, cat: "frontend" },
+  { name: "Shadcn/UI", icon: <SiShadcnui className="text-white" />, cat: "frontend" },
+  { name: "DaisyUI", icon: <SiDaisyui className="text-[#1ad1a5]" />, cat: "frontend" },
+  { name: "HTML5", icon: <SiHtml5 className="text-[#e34f26]" />, cat: "frontend" },
+  { name: "CSS3", icon: <FaCss3Alt className="text-[#1572b6]" />, cat: "frontend" },
 
+  // Backend & Auth & Database
   { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" />, cat: "backend" },
-  { name: "Express", icon: <SiExpress className="text-[#ffffff]" />, cat: "backend" },
+  { name: "Express.js", icon: <SiExpress className="text-white" />, cat: "backend" },
+  { name: "REST APIs", icon: <SiPostman className="text-[#ff6c37]" />, cat: "backend" },
+  { name: "BetterAuth", icon: <FaShieldAlt className="text-[#00ffc8]" />, cat: "backend" },
   { name: "MongoDB", icon: <SiMongodb className="text-[#47a248]" />, cat: "backend" },
   { name: "Mongoose", icon: <SiMongoose className="text-[#880000]" />, cat: "backend" },
-  { name: "Prisma", icon: <SiPrisma className="text-[#ffffff]" />, cat: "backend" },
-  { name: "GraphQL", icon: <SiGraphql className="text-[#e10098]" />, cat: "backend" },
+  { name: "Firebase Auth", icon: <SiFirebase className="text-[#ffca28]" />, cat: "backend" },
+  { name: "JWT", icon: <SiJsonwebtokens className="text-[#d63aff]" />, cat: "backend" },
 
+  // Tools
   { name: "Git", icon: <FaGitAlt className="text-[#f05032]" />, cat: "tools" },
-  { name: "Github", icon: <FaGithub className="text-[#ffffff]" />, cat: "tools" },
-  { name: "Vercel", icon: <SiVercel className="text-[#ffffff]" />, cat: "tools" },
-  { name: "Netlify", icon: <SiNetlify className="text-[#00ad9f]" />, cat: "tools" },
+  { name: "GitHub", icon: <FaGithub className="text-white" />, cat: "tools" },
+  { name: "Vercel", icon: <SiVercel className="text-white" />, cat: "tools" },
   { name: "Figma", icon: <FaFigma className="text-[#f24e1e]" />, cat: "tools" },
+  { name: "Stripe", icon: <SiStripe className="text-[#635bff]" />, cat: "tools" },
 ];
 
 const tabs = ["All", "Frontend", "Backend", "Tools"];
@@ -109,7 +122,7 @@ export default function Skills() {
         transition={{ duration: 0.5, delay: 0.25 }}
         className="font-mono text-[0.75rem] text-white/55 tracking-wider mb-12"
       >
-        // technologies I use to build modern web applications
+        {"// "}technologies I use to build modern web applications
       </motion.p>
 
       {/* Tabs */}

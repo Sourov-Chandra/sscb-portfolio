@@ -8,24 +8,24 @@ import { HiArrowRight, HiDownload } from "react-icons/hi";
 // ─── EDIT YOUR INFO HERE ───────────────────────────────────────────────────
 const CONFIG = {
   name: "Sourov Chandra Barmon",
-  role: "Full-Stack Dev.",
-  location: "Dhaka, BD",
-  experience: 3,
+  role: "Full-Stack Web Dev.",
+  location: "Thakurgaon, BD",
+  education: "Diploma in CST",
+  certified: "Programming Hero",
   cvPath: "/cv.pdf",
   github: "https://github.com/Sourov-Chandra",
   githubLabel: "github.com/Sourov-Chandra",
   linkedin: "https://www.linkedin.com/in/sourov-chandra-barmon",
   linkedinLabel: "linkedin.com/in/sourov-chandra-barmon",
-  // stack: ["Next.js", "TypeScript", "Node.js", "Tailwind"],
-  stack: ["Next.js", "JavaScript", "Node.js", "Tailwind"],
+  stack: ["Next.js", "React.js", "Express.js", "MongoDB", "BetterAuth", "Tailwind CSS"],
   stats: [
-    { num: "1+", label: "Years Exp." },
-    { num: "10+", label: "Projects Done" },
-    // { num: "15+", label: "Happy Clients" },
+    { num: "3", label: "Flagship Apps" },
+    { num: "1", label: "Full-Stack Cert." },
+    { num: "2026", label: "Diploma CST" },
   ],
 };
 
-const TYPED_LINES = [CONFIG.name, "a Developer", "a Builder"];
+const TYPED_LINES = [CONFIG.name, "Full-Stack Developer", "MERN Stack Builder"];
 // ──────────────────────────────────────────────────────────────────────────
 
 const fadeUp = (delay = 0) => ({
@@ -169,8 +169,8 @@ export default function Hero() {
           {...fadeUp(1.0)}
           className="max-w-120 text-[0.95rem] leading-[1.85] text-white/65 mb-10"
         >
-          I craft high-performance web apps with obsessive attention to detail —
-          pixel-perfect UIs, clean architecture, and scalable backend systems.
+          Full-stack web developer specializing in Next.js, Express, MongoDB, and BetterAuth —
+          building secure, scalable web applications with clean architecture and user-focused design.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -195,7 +195,7 @@ export default function Hero() {
 
           <a
             href={CONFIG.cvPath}
-            download
+            download="Sourov_Chandra_Barmon_Resume.pdf"
             className="flex items-center gap-2 border border-white/10
               text-white/50 font-mono text-[0.72rem] tracking-wider
               px-7 py-3.5 rounded hover:border-[#00ffc8]/40
@@ -263,8 +263,13 @@ export default function Hero() {
             </p>
             <p>
               &nbsp;&nbsp;
-              <span className="text-sky-300">&quot;experience&quot;</span>:{" "}
-              <span className="text-yellow-200">{CONFIG.experience}</span>,
+              <span className="text-sky-300">&quot;education&quot;</span>:{" "}
+              <span className="text-yellow-200">&quot;{CONFIG.education}&quot;</span>,
+            </p>
+            <p>
+              &nbsp;&nbsp;
+              <span className="text-sky-300">&quot;certified&quot;</span>:{" "}
+              <span className="text-yellow-200">&quot;{CONFIG.certified}&quot;</span>,
             </p>
             <p>
               &nbsp;&nbsp;

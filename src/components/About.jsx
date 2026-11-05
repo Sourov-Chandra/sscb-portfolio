@@ -8,34 +8,33 @@ import { BsFillLightningChargeFill } from "react-icons/bs";
 
 const info = [
   { label: "Name", value: "Sourov Chandra Barmon", accent: false },
-  { label: "Location", value: "Thakurgaon, Rangpur, Bangladesh", accent: false },
-  { label: "Email", value: "sourovtpi@yahoo.com", accent: true },
+  { label: "Location", value: "Thakurgaon, Rangpur, BD", accent: false },
+  { label: "Email", value: "sourov.cb.tech@gmail.com", accent: true },
   { label: "Status", value: "Available ✦", accent: true },
-  { label: "Experience", value: "1+ Years", accent: false },
-  { label: "Degree", value: "Diploma in Engineering", accent: false },
+  { label: "Focus", value: "Full-Stack / MERN", accent: false },
+  { label: "Education", value: "Diploma in CST (2026)", accent: false },
 ];
 
-// const strengths = [
-//   { icon: "⚡", label: "Frontend", value: "Expert" },
-//   { icon: "🔧", label: "Backend", value: "Advanced" },
-//   { icon: "🐳", label: "DevOps", value: "Intermediate" },
-// ];
-
 const strengths = [
-  { icon: "⚡", label: "Frontend Development" },
-  { icon: "🔧", label: "Backend Systems" },
-  // { icon: "🐳", label: "Deployment & DevOps" },
-  { icon: "🐳", label: "Deployment & Maintenance " },
+  { icon: "⚡", label: "Frontend & UI (React, Next.js, Tailwind CSS)" },
+  { icon: "🔧", label: "Backend & REST APIs (Express.js, Node.js)" },
+  { icon: "🛡️", label: "Auth & Security (BetterAuth, JWT, OAuth)" },
+  { icon: "🍃", label: "Databases (MongoDB, Mongoose, Atlas)" },
 ];
 
 const techs = [
   "Next.js",
-  'JavaScript',
+  "React.js",
+  "JavaScript",
   "TypeScript",
   "Node.js",
+  "Express.js",
   "MongoDB",
-  // "Docker",
-  "Tailwind",
+  "BetterAuth",
+  "Tailwind CSS",
+  "Shadcn/UI",
+  "Stripe",
+  "Git",
 ];
 
 export default function About() {
@@ -90,25 +89,19 @@ export default function About() {
           <p className="text-[0.95rem] leading-[1.9] text-white/75 mb-5">
             I&apos;m a{" "}
             <span className="text-[#00ffc8] font-bold">
-              Full-Stack Developer
+              Full-Stack Web Developer
             </span>{" "}
-            based in Rangpur, Bangladesh with 1+ years of experience building
-            modern web applications that are fast, accessible, and visually
-            compelling.
+            based in Thakurgaon, Rangpur, Bangladesh. I have hands-on experience designing and building secure, scalable web applications with the MERN stack and Next.js.
           </p>
           <p className="text-[0.95rem] leading-[1.9] text-white/75 mb-5">
             I specialize in{" "}
             <span className="text-[#00ffc8] font-bold">
-              Next.js, JavaScript, and Node.js
+              Next.js (App Router), Express.js, MongoDB, and BetterAuth
             </span>{" "}
-            — from pixel-perfect frontends to robust REST {/* & GraphQL */}{" "}
-            API(s). I care deeply about clean code, great UX, and shipping
-            products that actually work.
+            — building robust authentication systems, real-time booking platforms, and RESTful APIs with clean architecture and user-focused design.
           </p>
           <p className="text-[0.95rem] leading-[1.9] text-white/75">
-            When I&apos;m not coding, I&apos;m exploring open source, reading
-            about system design, or brewing the perfect cup of coffee{" "}
-            <GiCoffeeCup className="inline" />
+            Currently pursuing my Diploma in Engineering (Computer Science and Technology) at Thakurgaon Polytechnic Institute, looking to contribute to a professional engineering team while continuing to grow as a developer.
           </p>
 
           {/* Info grid */}
@@ -129,10 +122,8 @@ export default function About() {
 
           {/* Download CV */}
           <a
-            // href="/cv.pdf"
-            // href="https://drive.google.com/file/d/1EDxz7r58js_-jnqmBQcsNd-M6HMe4Yaa/view?usp=sharing"
-            href="https://drive.google.com/uc?export=download&id=1EDxz7r58js_-jnqmBQcsNd-M6HMe4Yaa"
-            download
+            href="/cv.pdf"
+            download="Sourov_Chandra_Barmon_Resume.pdf"
             className="inline-flex items-center gap-2 mt-8
               bg-[#00ffc8] text-[#080c10] font-mono font-bold
               text-[0.72rem] tracking-wider px-7 py-3.5 rounded
@@ -150,21 +141,21 @@ export default function About() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="flex flex-col gap-5"
         >
-          {/* Projects completed card */}
+          {/* Flagship Projects Card */}
           <div className="bg-white/2 border border-[#00ffc8]/15 rounded-lg p-6 hover:border-[#00ffc8]/40 transition-colors duration-300">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-9 rounded-md bg-[#00ffc8]/08 border border-[#00ffc8]/15 flex items-center justify-center text-base">
                 <BsFillLightningChargeFill />
               </div>
               <span className="font-mono text-[0.72rem] text-white/75 tracking-wider">
-                Projects Completed
+                Full-Stack Architecture
               </span>
             </div>
             <div className="text-[1.6rem] font-extrabold text-white">
-              10<span className="text-[#00ffc8]">+</span>
+              3<span className="text-[#00ffc8]"> Flagship</span> Apps
             </div>
             <div className="font-mono text-[0.62rem] text-white/55 tracking-wider mt-1">
-              across web, mobile & api
+              RecipeHub · MediQueue · QurbaniHat
             </div>
           </div>
 

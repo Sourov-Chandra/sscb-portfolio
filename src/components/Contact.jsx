@@ -7,19 +7,25 @@ const contactItems = [
   {
     icon: "✉",
     label: "Email",
-    value: "sourov.cb.tech@email.com",
-    href: "mailto:you@email.com",
+    value: "sourov.cb.tech@gmail.com",
+    href: "mailto:sourov.cb.tech@gmail.com",
+  },
+  {
+    icon: "📞",
+    label: "Phone",
+    value: "+880 1785 285439",
+    href: "tel:+8801785285439",
   },
   {
     icon: "📍",
     label: "Location",
-    value: "Thakurgaon, Bangladesh",
+    value: "Thakurgaon, Rangpur, Bangladesh",
     href: null,
   },
   {
     icon: "⚡",
-    label: "Response Time",
-    value: "Within 24 hours",
+    label: "Availability",
+    value: "Open for Full-Stack / MERN Roles",
     href: null,
   },
 ];
@@ -33,9 +39,9 @@ const socialLinks = [
   },
   { label: "X", href: "https://x.com/Sourov_tpi", title: "Twitter" },
   {
-    label: "DR",
+    label: "FB",
     href: "https://www.facebook.com/sourov.chandra.barmon.dev",
-    title: "Dribbble",
+    title: "Facebook",
   },
 ];
 
@@ -63,18 +69,20 @@ export default function Contact() {
   const handleChange = (e) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("sending");
 
-    // ── Replace with your actual email API call ──────────────────────────
-    // EmailJS:  await emailjs.send("SERVICE_ID", "TEMPLATE_ID", formData, "PUBLIC_KEY");
-    // Resend:   await fetch("/api/contact", { method:"POST", body: JSON.stringify(formData) });
-    // ────────────────────────────────────────────────────────────────────
-    await new Promise((r) => setTimeout(r, 1500));
+    // Open actual email client with pre-filled content to sourov.cb.tech@gmail.com
+    const subject = encodeURIComponent(formData.subject || `Portfolio Contact from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Hello Sourov,\n\n${formData.message}\n\nBest regards,\n${formData.name} (${formData.email})`
+    );
+    window.location.href = `mailto:sourov.cb.tech@gmail.com?subject=${subject}&body=${body}`;
+
     setStatus("sent");
     setFormData({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setStatus("idle"), 4000);
+    setTimeout(() => setStatus("idle"), 5000);
   };
 
   return (
