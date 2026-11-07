@@ -12,7 +12,7 @@ const info = [
   { label: "Email", value: "sourov.cb.tech@gmail.com", accent: true },
   { label: "Status", value: "Available ✦", accent: true },
   { label: "Focus", value: "Full-Stack / MERN", accent: false },
-  { label: "Education", value: "Diploma in CST (2026)", accent: false },
+  { label: "Education", value: "Diploma in CST", accent: false },
 ];
 
 const strengths = [

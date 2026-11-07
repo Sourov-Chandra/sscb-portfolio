@@ -19,9 +19,9 @@ const CONFIG = {
   linkedinLabel: "linkedin.com/in/sourov-chandra-barmon",
   stack: ["Next.js", "React.js", "Express.js", "MongoDB", "BetterAuth", "Tailwind CSS"],
   stats: [
-    { num: "3", label: "Flagship Apps" },
-    { num: "1", label: "Full-Stack Cert." },
-    { num: "2026", label: "Diploma CST" },
+    { num: "3", suffix: "+", label: "Flagship Apps" },
+    { num: "10", suffix: "+", label: "Technologies" },
+    { num: "100", suffix: "%", label: "MERN Focus" },
   ],
 };
 
@@ -220,8 +220,8 @@ export default function Hero() {
           {CONFIG.stats.map((s) => (
             <div key={s.label}>
               <div className="font-mono text-[1.7rem] font-bold text-white">
-                {s.num.replace("+", "")}
-                <span className="text-[#00ffc8]">+</span>
+                {s.num}
+                <span className="text-[#00ffc8]">{s.suffix ?? "+"}</span>
               </div>
               <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase text-white/55 mt-1">
                 {s.label}
