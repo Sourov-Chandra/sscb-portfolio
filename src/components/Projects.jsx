@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import { projects } from "@/lib/data";
 
-const tabs = ["All", "Next.js", "Express.js", "BetterAuth", "MongoDB"];
+const tabs = ["All", "Next.js", "Express.js", "BetterAuth", "MongoDB", "Render"];
 
 export default function Projects() {
   const ref = useRef(null);
@@ -93,7 +93,7 @@ export default function Projects() {
       </motion.div>
 
       {/* Projects grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {filtered.map((project, i) => {
           const displayUrl = project.demo
             ? project.demo.replace(/^https?:\/\//, "").replace(/\/$/, "")

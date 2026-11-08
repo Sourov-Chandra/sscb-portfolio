@@ -18,6 +18,7 @@ import {
   SiJsonwebtokens,
   SiPostman,
   SiStripe,
+  SiRender,
 } from "react-icons/si";
 import {
   FaReact,
@@ -55,6 +56,7 @@ const skills = [
   { name: "Git", icon: <FaGitAlt className="text-[#f05032]" />, cat: "tools" },
   { name: "GitHub", icon: <FaGithub className="text-white" />, cat: "tools" },
   { name: "Vercel", icon: <SiVercel className="text-white" />, cat: "tools" },
+  { name: "Render", icon: <SiRender className="text-[#46e3b7]" />, cat: "tools" },
   { name: "Figma", icon: <FaFigma className="text-[#f24e1e]" />, cat: "tools" },
   { name: "Stripe", icon: <SiStripe className="text-[#635bff]" />, cat: "tools" },
 ];

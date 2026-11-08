@@ -59,6 +59,26 @@ export const projects = [
     githubServer: null,
     image: null,
   },
+  {
+    id: 4,
+    name: "Picnito",
+    subtitle: "Online Image Converter & Optimizer",
+    year: "2024",
+    cat: "fullstack",
+    featured: true,
+    desc: "A privacy-first online image converter tool supporting batch conversion across multiple formats with zero tracking and in-memory processing.",
+    bullets: [
+      "Built a high-performance image converter supporting JPG, PNG, WebP, AVIF, JFIF, and GIF formats.",
+      "Engineered secure in-memory buffer processing for zero permanent storage and total user anonymity.",
+      "Implemented batch conversions supporting multiple files with automatic ZIP compression packaging.",
+      "Architected decoupled full-stack deployment with Next.js frontend on Vercel and Express.js processing service on Render.",
+    ],
+    tags: ["Next.js", "Express.js", "Node.js", "Render", "Vercel", "Tailwind CSS"],
+    demo: "https://picnito.vercel.app/",
+    githubClient: "https://github.com/Sourov-Chandra/image-converter",
+    githubServer: "https://github.com/Sourov-Chandra/image-converter-server",
+    image: null,
+  },
 ];
 
 export const education = [

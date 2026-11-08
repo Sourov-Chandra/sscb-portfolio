@@ -156,10 +156,10 @@ export default function About() {
               </span>
             </div>
             <div className="text-[1.6rem] font-extrabold text-white">
-              3<span className="text-[#00ffc8]"> Flagship</span> Apps
+              4<span className="text-[#00ffc8]"> Flagship</span> Apps
             </div>
             <div className="font-mono text-[0.62rem] text-white/55 tracking-wider mt-1">
-              RecipeHub · MediQueue · QurbaniHat
+              Picnito · RecipeHub · MediQueue · QurbaniHat
             </div>
           </div>
 

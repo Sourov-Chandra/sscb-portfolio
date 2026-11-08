@@ -19,7 +19,7 @@ const CONFIG = {
   linkedinLabel: "linkedin.com/in/sourov-chandra-barmon",
   stack: ["Next.js", "React.js", "Express.js", "MongoDB", "BetterAuth", "Tailwind CSS"],
   stats: [
-    { num: "3", suffix: "+", label: "Flagship Apps" },
+    { num: "4", suffix: "+", label: "Flagship Apps" },
     { num: "10", suffix: "+", label: "Technologies" },
     { num: "100", suffix: "%", label: "MERN Focus" },
   ],
